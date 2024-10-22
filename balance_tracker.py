@@ -40,8 +40,8 @@ if 'balance' not in st.session_state:
 st.markdown(f"<h1 style='font-size: 48px;'>Current Balance: ${st.session_state.balance:.2f}</h1>", unsafe_allow_html=True)
 
 # Create input fields for adding and subtracting
-add_amount = st.number_input("Add Amount:", min_value=0.0, step=0.01, key="add", on_change=lambda: update_balance(st.session_state.add, "add"))
-subtract_amount = st.number_input("Subtract Amount:", min_value=0.0, step=0.01, key="subtract", on_change=lambda: update_balance(st.session_state.subtract, "subtract"))
+add_amount = st.number_input("Add Amount:", min_value=0.0, step=1, key="add", on_change=lambda: update_balance(st.session_state.add, "add"))
+subtract_amount = st.number_input("Subtract Amount:", min_value=0.0, step=1, key="subtract", on_change=lambda: update_balance(st.session_state.subtract, "subtract"))
 
 # Show a note for the user
 st.info("Enter an amount and press Enter to update your balance.")
